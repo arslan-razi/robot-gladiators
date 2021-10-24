@@ -1,36 +1,61 @@
-
 var playerName = window.prompt("What is your robot's name?");
-// What is this?
-console.log(playerName);
+var playerHealth = 100;
+var playerAttack = 10;
 
-console.log("This logs a string, good for leaving yourself a message");
-// this will do math and log 20
-console.log(10 + 10);
+// You can also log multiple values at once like this
+console.log(playerName, playerAttack, playerHealth);
 
-// what is this?
-console.log("Our robot's name is " + playerName);
+var enemyName = "Roborto";
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-// Tony the Robot is ready for battle!
-console.log("Tony the Robot" + " is ready for battle!");
+var fight = function() {
+    // Alert players that they are starting the round
+    window.alert("Welcome to Robot Gladiators!");
+  
+    //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
+    enemyHealth = enemyHealth - playerAttack;
+  
+    // Log a resulting message to the console so we know that it worked.
 
-// "Tony the Robot is ready for battle!"
-console.log(playerName + " is ready for battle!");
+    console.log(
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+      );
+  
+    // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
 
-// "Your robot, Tony the Robot, has won!
-console.log("Your robot, " + playerName + ", has won!");
+    playerHealth = playerHealth - enemyAttack;
+  
+    // Log a resulting message to the console so we know that it worked.
+    console.log(
+        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+      );
 
+    // put new code under this
+    console.log(
+    playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+  );
+  
+  // check enemy's health
+  if (enemyHealth <= 0) {
+    window.alert(enemyName + " has died!");
+  } 
+  else {
+    window.alert(enemyName + " still has " + enemyHealth + " health left.");
+  }
 
-                 
-// this creates a function named "fight"
+  };
 
-// declare function
+// put new code under this
+console.log(enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining.");
 
-function fight() {
-  window.alert("The fight has begun!");
+// check player's health
+if (playerHealth <= 0) {
+  window.alert(playerName + " has died!");
+} 
+else {
+  window.alert(playerName + " still has " + playerHealth + " health left.");
 }
 
-// call function
 
-//fight();
-
-
+fight();
